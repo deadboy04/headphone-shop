@@ -9,12 +9,12 @@ export const useStyles = makeStyles((theme) => ({
         background: "#E3CBAA",
         color: '#FFF'
     },
-    first: {
-
-        background: "red",
+    gridTextFirst: {
+        maxWidth: 450,
+        marginLeft: "25%",
     },
-    second: {
-        background: "blue",
+    gridTextSecond: {
+        marginTop: "15%"
     },
     buttonOrder: {
         borderRadius: "0",
@@ -28,6 +28,20 @@ export const useStyles = makeStyles((theme) => ({
             background: "#FFF",
             color: "#AC9E76"
         },
+    },
+    textAbout: {
+        paddingBottom: 30,
+    },
+    gridItems: {
+        marginBlock: "10%",
+    },
+    nameOfModel: {
+        fontSize: 50,
+    },
+    aboutExperience: {
+        fontSize: 15,
+        maxWidth: 450,
+        lineHeight: 2
     }
 
 }))
@@ -40,23 +54,23 @@ export default function BestSound() {
             <Box className={classes.mainSection}>
                 <Grid container spacing={0} className={classes.mainGridCont}>
                     <Grid item className={classes.gridItems} xs={6}>
-                        <Box className={classes.gridTextFirst}>
-
-                        </Box>
+                        <Container className={classes.gridTextFirst}>
+                            <img src="https://static.wixstatic.com/media/82fcd3_7b50ff02a3dd411fac2e6ced36f2aed0~mv2.png/v1/fill/w_488,h_267,al_c,q_85,usm_0.66_1.00_0.01/Model_Strip_Single.webp"/>
+                        </Container>
                     </Grid>
                     <Grid item className={classes.gridItems} xs={6}>
-                        <Box className={classes.gridTexSecond}>
-                            <Typography variant="h2" className={classNames(classes.textAbout, classes.nameOfModel)}>
+                        <Container className={classes.gridTexSecond}>
+                            <Typography variant="h3" className={classNames(classes.textAbout, classes.nameOfModel)}>
                                 Music Like You've <br/>
                                 Never Heard Before
                             </Typography>
-                            <Typography variant="h6" className={classNames(classes.textAbout, classes.aboutExperience)}>
+                            <Typography variant="h2" className={classNames(classes.textAbout, classes.aboutExperience)}>
                                 I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content
                             </Typography>
                             <Typography className={classes.textAbout}>
                                 <Button className={classes.buttonOrder} variant="outlined">Order Now</Button>
                             </Typography>
-                        </Box>
+                        </Container>
                     </Grid>
                 </Grid>
             </Box>

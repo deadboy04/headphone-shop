@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     menuButtons: {
         textDecoration: "none",
-        marginRight: theme.spacing(1.5)
+        marginRight: theme.spacing(1.5),
     },
     title: {
         flexGrow: 1,
@@ -45,6 +45,7 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: 12,
         textAlign: "center",
         textTransform: "capitalize",
+        font: 'var(--fnt,var(--font_5))',
         '&:hover': {
             background: "#FFF",
         }
@@ -65,11 +66,7 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: 32
     },
     linkIcons: {
-        fontSize: 25,
+
     },
-    title2: {
-
-    }
-
 })
 )
