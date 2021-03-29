@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function TuneIcon() {
     return (
         <svg preserveAspectRatio="xMidYMid meet" data-box="67.893 23.943 128.667 52.367" viewBox="67.893 23.943 128.667 52.367" height="60" width="170" xmlns="http://www.w3.org/2000/svg" data-type="color" role="img"><defs><style>#comp-jlkmu9oi svg [data-color="1"] </style></defs>

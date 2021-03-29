@@ -11,12 +11,19 @@ export const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: "7%",
     },
     paper: {
         verticalAlign: "bottom",
     },
     allContent: {
-        maxWidth: 1240,
+        maxWidth: 1185,
+        margin: "auto"
+    },
+    MainGrid: {
+        paddingTop: "10%",
+        margin: "auto"
+    },
+    secondGrid: {
+        marginTop: "8%"
     }
 }))

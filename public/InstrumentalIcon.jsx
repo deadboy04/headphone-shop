@@ -1,4 +1,7 @@
-export default function InstruentalIcon() {
+import React from 'react'
+
+
+export default function InstrumentalIcon() {
     return (
         <svg preserveAspectRatio="xMidYMid meet" data-box="17.733 82.333 164.534 37.334" viewBox="17.733 82.333 164.534 37.334" height="60" width="170" data-type="color" role="img"><defs><style>#comp-jlkmvd5k svg [data-color="1"] </style></defs>
             <g>

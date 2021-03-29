@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function EastFlowIcon() {
     return (
         <svg preserveAspectRatio="xMidYMid meet" data-box="18.444 84.485 163.112 27.031" viewBox="18.444 84.485 163.112 27.031" height="60" width="200" xmlns="http://www.w3.org/2000/svg" data-type="color" role="img"><defs><style>#comp-jlkmuuq3 svg [data-color="1"] </style></defs>

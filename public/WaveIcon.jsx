@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function WaveIcon() {
     return (
         <svg preserveAspectRatio="xMidYMid meet" data-box="38.667 78.281 122.666 41.438" viewBox="38.667 78.281 122.666 41.438" height="60" width="170" data-type="color" role="img"><defs><style>#comp-jlkmvd5l svg [data-color="1"] </style></defs>

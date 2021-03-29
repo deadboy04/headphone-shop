@@ -17,6 +17,8 @@ export const useStyles = makeStyles((theme) => ({
         borderBottom: "1px solid #fff",
     },
     menuLinks: {
+        font: 'var(--fnt,var(--font_5))',
+        fontSize: 13,
         marginLeft: theme.spacing(4.5),
         '&:hover': {
             transition: "all 0.3s ease",
@@ -54,6 +56,8 @@ export const useStyles = makeStyles((theme) => ({
         height: 650,
     },
     logText: {
+        fontSize: 13,
+        marginRight: 28,
         color: "#D0B48F",
         '&:hover': {
             color: "#7C6955"
@@ -63,10 +67,17 @@ export const useStyles = makeStyles((theme) => ({
         position: "absolute",
         padding: 0,
         marginLeft: -40,
-        fontSize: 32
+        fontSize: 32,
     },
     linkIcons: {
-
+        position : "relative",
+        top: 6,
+        fontSize: 22
+    },
+    logInIcon: {
+        fontSize: 30,
+        color: "#D0B48F",
+        top: 8,
     },
 })
 )
