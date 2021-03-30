@@ -101,7 +101,7 @@ export default function MainContent() {
                 <EmailDistribution className={classes.emailDistribution}/>
                 <OtherLinks className={classes.otherLinks}/>
                 <Footer className={classes.footer}/>
-                <SignUp/>
+                <SignUp className={classes.signUp}/>
             </>
     )
 }

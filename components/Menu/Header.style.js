@@ -29,7 +29,6 @@ export const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(4.5),
     },
     menuButtons: {
-        textDecoration: "none",
         marginRight: theme.spacing(1.5),
     },
     title: {

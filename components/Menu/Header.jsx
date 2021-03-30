@@ -15,7 +15,7 @@ export default function Header() {
                     <Toolbar className={classes.headerMenu} variant="regular">
                         <Typography variant="h5" className={classes.title}>
                             <Link href="#" color="inherit" className={classes.menuLink}
-                                  style={{textDecoration: 'none'}}>
+                                  underline="none">
                                 <Headset className={classes.headIcon}/> Soundbeam
                             </Link>
                             <Link href="#home" variant="body2" color="inherit" to="home" spy={true} smooth={true}

@@ -1,33 +1,17 @@
-import {Typography, Container, Grid, Paper, TextField, Button, Link} from '@material-ui/core';
+import {Typography, Container, Grid, Paper, TextField, Button, Link, Box} from '@material-ui/core';
 import React from 'react';
-// import {useRouter} from 'next/router';
-// import {useMutation} from '@apollo/client';
-import {makeStyles} from "@material-ui/core/styles";
-// import clsx from 'clsx';
-// import {useFormik} from 'formik';
-// import {Formik} from 'formik';
-// import * as yup from 'yup';
-
-const useStyles = makeStyles((theme) => ({
-    mainGrid: {
-        height: '1770',
-    },
-    formPaper: {},
-    headingSignUp: {
-        fontSize: 48,
-        font: 'var(--ttlFnt,var(--font_2))',
-        lineHeight: 48,
-    },
-    headingLogIn: {}
-}))
+import {useStyles} from "./SignUp.style";
+import classNames from "classnames";
+import {withStyles} from "@material-ui/core/styles";
 
 export default function SignUp() {
+    const classes = useStyles();
 
     return (
             <main>
                 <Grid className={classes.mainGrid}>
                     <Grid item className={classes.container}>
-                        <Paper className={classes.formPaper} elevation={1} square>
+                        <Box>
                             <Grid
                                     container
                                     direction="column"
@@ -41,31 +25,38 @@ export default function SignUp() {
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="h2" className={classes.headingLogIn}>
-                                        Already a member? <Link href=''>Log in</Link>
+                                        Already a member? <Link href='' color="inherit" underline="none"
+                                                                className={classes.linkStyle}>
+                                        Log in
+                                    </Link>
                                     </Typography>
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="h2" className={classes.heading}>
-                                        Google
+                                        <Button variant="contained">Default</Button>
                                     </Typography>
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="h2" className={classes.heading}>
-                                        Google
+                                        <Button variant="contained">Default</Button>
                                     </Typography>
                                 </Grid>
                                 <Grid item>
-                                    <Typography variant="h2" className={classes.heading}>
-                                        or
-                                    </Typography>
+                                    <div className={classes.line}>
+                                        <Typography variant="h2" className={classes.headingLine}>
+                                            or
+                                        </Typography>
+                                    </div>
                                 </Grid>
                                 <Grid item>
-                                    <Typography variant="h2" className={classes.heading}>
-                                        Sign up with email
+                                    <Typography variant="h2" className={classes.headingSignEmail}>
+                                        <Button variant="contained" className={classNames(classes.logButton)} classes={{root: classes.root}}>
+                                            Sign up with email
+                                        </Button>
                                     </Typography>
                                 </Grid>
                             </Grid>
-                        </Paper>
+                        </Box>
                     </Grid>
                 </Grid>
             </main>
