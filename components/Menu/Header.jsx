@@ -1,13 +1,35 @@
 import React from 'react';
-import {AppBar, Container, Toolbar, Typography, Button} from '@material-ui/core';
+import {AppBar, Container, Toolbar, Typography, Button, useMediaQuery, Dialog, Drawer} from '@material-ui/core';
 import {Link, animateScroll as scroll} from "react-scroll";
+import SignUp from "../Auth/SignUp/SignUp";
 import {Headset, YouTube, Instagram, Twitter, ShoppingBasket, AccountCircle} from "@material-ui/icons";
 import classNames from 'classnames';
 import {useStyles} from './Header.style'
+import SideBasket from "../SideBasket/SideBasket";
 
 
 export default function Header() {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    // const [state, setState] = React.useState({
+    //     top: false,
+    //     left: false,
+    //     bottom: false,
+    //     right: false,
+    // });
+    // const toggleDrawer = (anchor, open) => (event) => {
+    //     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    //         return;
+    //     }
+    //
+    //     setState({...state, [anchor]: open});
+    // };
+    //
 
     return (
             <AppBar className={classes.header}>
@@ -32,13 +54,18 @@ export default function Header() {
                             </Link>
                         </Typography>
                         <Typography>
-                            <Link href="#" variant="body2" color="inherit" className={classes.menuButtons}>
+                            <Link href="#" variant="body2" color="inherit" className={classes.menuButtons}
+                                  onClick={handleClickOpen}>
                                 <AccountCircle className={classNames(classes.linkIcons, classes.logInIcon)}/>
                             </Link>
                             <Link href="#" variant="body2" color="inherit"
-                                  className={classNames(classes.menuButtons, classes.logText)} underline="none">
+                                  className={classNames(classes.menuButtons, classes.logText)} underline="none"
+                                  onClick={handleClickOpen}>
                                 Log in
                             </Link>
+                            <Dialog fullScreen open={open}>
+                                <SignUp setOpen={setOpen}/>
+                            </Dialog>
                             <Button className={classNames(classes.menuButtons, classes.orderButton)}
                                     href="#contained-buttons" disableElevation>
                                 Order Now
@@ -55,6 +82,9 @@ export default function Header() {
                             <Link href="#" variant="body2" color="inherit" className={classes.menuButtons}>
                                 <ShoppingBasket className={classes.linkIcons}/>
                             </Link>
+                            {/*<Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>*/}
+                            {/*    {SideBasket(anchor)}*/}
+                            {/*</Drawer>*/}
                         </Typography>
                     </Toolbar>
                 </Container>

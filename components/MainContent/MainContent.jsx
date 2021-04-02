@@ -1,24 +1,33 @@
 import React from 'react';
-import Content from "../Content";
-import Header from "../Menu";
-import Reviews from "../Reviews";
-import AsFeaturedOn from "../AsFeaturedOn";
-import BestSound from "../BestSound";
-import EmailDistribution from "../EmailDistribution";
-import Footer from "../Footer";
-import SignUp from "../Auth/SignUp";
-import OtherLinks from "../OtherLinks";
-import {useStyles} from "./MainContent.style";
-import {Link, animateScroll as scroll} from "react-scroll";
+import Content from '../Content';
+import Header from '../Menu';
+import Reviews from '../Reviews';
+import AsFeaturedOn from '../AsFeaturedOn';
+import BestSound from '../BestSound';
+import EmailDistribution from '../EmailDistribution';
+import Footer from '../Footer';
+import OtherLinks from '../OtherLinks';
+import LoginWithEmail from '../Auth/Login/LoginWithEmail';
+import SignUpWithEmail from '../Auth/SignUp/SignUpWithEmail';
 import {Parallax} from 'react-parallax';
-import {Typography, Box, Grid} from '@material-ui/core';
-import {Headset, FlashOn, Bluetooth, GraphicEq} from "@material-ui/icons";
+import {useStyles} from './MainContent.style'
+import {Typography, Box, Grid, useMediaQuery, Dialog, Drawer} from '@material-ui/core';
+import {Headset, FlashOn, Bluetooth, GraphicEq} from '@material-ui/icons';
 
 const image = 'https://static.wixstatic.com/media/82fcd3_0d16229674fd4698b2a7a99a34d42de1~mv2.jpg/v1/fill/w_1175,h_832,al_c,q_85/82fcd3_0d16229674fd4698b2a7a99a34d42de1~mv2.webp';
 const image2 = 'https://static.wixstatic.com/media/82fcd3_6722574f5e26430090bb86df75c063ae~mv2_d_4724_3072_s_4_2.jpg/v1/fill/w_1432,h_866,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_6722574f5e26430090bb86df75c063ae~mv2_d_4724_3072_s_4_2.webp';
 
 export default function MainContent() {
     const classes = useStyles();
+    //
+    // const [open, setOpen] = React.useState(false);
+    //
+    // const handleClickOpen = () => {
+    //     setOpen(true);
+    // };
+    // const handleClose = () => {
+    //     setOpen(false);
+    // };
     return (
             <>
                 <div className={classes.headerSection}>
@@ -30,9 +39,9 @@ export default function MainContent() {
                         <Grid container spacing={0} className={classes.mainGridCont}>
                             <Grid item className={classes.gridItems} xs={3}>
                                 <Box className={classes.gridTextFirst}>
-                                    <Typography variant="h6">
+                                    <Typography variant='h6'>
                                         <p>
-                                            <GraphicEq fontSize="large"/><br/>
+                                            <GraphicEq fontSize='large'/><br/>
                                             High Quality <br/>
                                             Sound
                                         </p>
@@ -45,10 +54,10 @@ export default function MainContent() {
                             </Grid>
                             <Grid item className={classes.gridItems} xs={3}>
                                 <Box className={classes.gridTexSecond}>
-                                    <Typography variant="h6">
+                                    <Typography variant='h6'>
 
                                         <p>
-                                            <Bluetooth fontSize="large"/> <br/>
+                                            <Bluetooth fontSize='large'/> <br/>
                                             Easy Wireless
                                             <br/>
                                             Listening
@@ -61,9 +70,9 @@ export default function MainContent() {
                             </Grid>
                             <Grid item className={classes.gridItems} xs={3}>
                                 <Box className={classes.gridTextFirst}>
-                                    <Typography variant="h6">
+                                    <Typography variant='h6'>
                                         <p>
-                                            <FlashOn fontSize="large"/> <br/>
+                                            <FlashOn fontSize='large'/> <br/>
                                             Longer <br/>
                                             Battery Life
                                         </p>
@@ -76,9 +85,9 @@ export default function MainContent() {
                             </Grid>
                             <Grid item className={classes.gridItems} xs={3}>
                                 <Box className={classes.gridTexSecond}>
-                                    <Typography variant="h6">
+                                    <Typography variant='h6'>
                                         <p>
-                                            <Headset fontSize="large"/> <br/>
+                                            <Headset fontSize='large'/> <br/>
                                             Sleek <br/>
                                             Updated Design
                                         </p>
@@ -101,7 +110,8 @@ export default function MainContent() {
                 <EmailDistribution className={classes.emailDistribution}/>
                 <OtherLinks className={classes.otherLinks}/>
                 <Footer className={classes.footer}/>
-                <SignUp className={classes.signUp}/>
+                <LoginWithEmail/>
+                <SignUpWithEmail/>
             </>
     )
 }

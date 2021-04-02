@@ -1,119 +1,93 @@
-import {Grid, Paper, Typography} from "@material-ui/core";
-import React from "react";
-FunctionComponent,
-        useCallback,
-        useContext,
-        useEffect,
-        useState,
-} from 'react'
-import {Grid, Paper, Typography} from '@material-ui/core'
-import {useRouter} from 'next/router'
-import {useMutation} from '@apollo/client'
-import {useFormik} from 'formik'
-import * as yup from 'yup'
-import clsx from 'clsx'
-import {useSnackbar} from 'notistack'
+import {
+    Typography,
+    Container,
+    Grid,
+    Paper,
+    TextField,
+    Button,
+    Link,
+    Box,
+    IconButton,
+    useMediaQuery,
+    Dialog
+} from '@material-ui/core';
+import React from 'react';
+import {useStyles} from '../SignUp/SignUp.style';
+import SignUp from '../SignUp/SignUp';
+import {Close} from '@material-ui/icons';
 
-import {Button, Link, Input} from '@ui/index'
-import {ILoginProps, ILoginMutationProps} from '@interfaces/auth'
-import SocialAuth from '../SocialAuth'
-import {AppContext} from '@providers/AppProvider'
-import {loginUser} from '@utils/auth'
-import LOGIN_USER from '@graphql/mutations/LoginUser'
-import {errorMessage} from '@utils/errorMessage'
+import {withStyles} from '@material-ui/core/styles';
 
-<Grid item >
-    <Paper elevation={1} square>
-        <Grid
-                container
-                direction="column"
-                alignItems="center"
-                justify="space-between"
-        >
-            <Grid item>
-                <Typography variant="h2">
-                    Вход
-                </Typography>
-            </Grid>
-            <Grid item>
-                <form className={classes.form} onSubmit={formik.handleSubmit}>
-                    <Input
-                            id="identifier"
-                            type="email"
-                            label="Введите email"
-                            name="identifier"
-                            variant="outlined"
-                            fullWidth
-                            className={
-                                formik.touched.identifier &&
-                                Boolean(formik.errors.identifier)
-                                        ? clsx(classes.input, classes.input_error)
-                                        : classes.input
-                            }
-                            value={formik.values.identifier}
-                            onChange={formik.handleChange}
-                            error={
-                                formik.touched.identifier &&
-                                Boolean(formik.errors.identifier)
-                            }
-                            helperText={
-                                formik.touched.identifier
-                                        ? formik.errors.identifier
-                                        : undefined
-                            }
-                    />
-                    <Input
-                            id="password"
-                            type={isPasswordVisible ? 'text' : 'password'}
-                            label="Введите пароль"
-                            name="password"
-                            variant="outlined"
-                            icon={isPasswordVisible ? 'visibilityOff' : 'visibility'}
-                            onIconClick={handleIconClick}
-                            fullWidth
-                            className={
-                                formik.touched.password && Boolean(formik.errors.password)
-                                        ? clsx(classes.input, classes.input_error)
-                                        : classes.input
-                            }
-                            value={formik.values.password}
-                            onChange={formik.handleChange}
-                            error={
-                                formik.touched.password && Boolean(formik.errors.password)
-                            }
-                            helperText={
-                                formik.touched.password ? formik.errors.password : undefined
-                            }
-                    />
-                    <Button
-                            type="submit"
-                            disabled={!formik.isValid}
-                            fullWidth
-                            className={classes.button}
-                    >
-                        {!state.loading ? 'Войти' : 'Загрузка'}
-                    </Button>
-                    <Link href={'/reset'}>Забыли пароль?</Link>
-                </form>
-            </Grid>
-            <Grid item>
-                <Typography variant="h3" className={classes.serviceHeading}>
-                    Или войдите с помощью сервисов
-                </Typography>
-            </Grid>
-            <SocialAuth/>
-        </Grid>
-    </Paper>
-</Grid>
-<Grid item className={classes.container}>
-    <Paper className={classes.registerPaper} elevation={1} square>
-        <Grid container justify="center" alignContent="center">
-            <Grid item>
-                Ещё нет аккаунта? <Link href={'/signup'}>Зарегистрируйтесь</Link>
-            </Grid>
-        </Grid>
-    </Paper>
-</Grid>
-</Grid>
-)
+export default function Login({setOpen}) {
+    const classes = useStyles();
+
+    const [open] = React.useState(false);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    return (
+            <main>
+                <Grid className={classes.mainGrid}>
+                    <IconButton onClick={handleClose} className={classes.closeButton}>
+                        <Close/>
+                    </IconButton>
+                    <Grid item className={classes.container}>
+                        <Grid
+                                container
+                                direction='column'
+                                alignItems='center'
+                        >
+                            <Grid item>
+                                <Typography variant='h1' className={classes.headingSignUp}>
+                                    Log In
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography variant='h2' className={classes.headingLogIn}>
+                                    New to this site?
+                                    <Link href='#' color='inherit' underline='none'
+                                          className={classes.linkStyle} onClick={handleClickOpen}>
+                                        &nbsp;Sign Up
+                                    </Link>
+                                    <Dialog fullScreen open={open}>
+                                        <SignUp setOpen={setOpen}/>
+                                    </Dialog>
+                                </Typography>
+                            </Grid>
+                            <Grid item className={classes.heading}>
+                                <Typography variant='h2'>
+                                    <Button variant='contained' className={classes.logButton}>Default</Button>
+                                </Typography>
+                            </Grid>
+                            <Grid item className={classes.heading}>
+                                <Typography variant='h2'>
+                                    <Button variant='contained' className={classes.logButton}>Default</Button>
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <div className={classes.line}>
+                                    <Typography variant='h2' className={classes.headingLine}>
+                                        or
+                                    </Typography>
+                                </div>
+                            </Grid>
+                            <Grid item className={classes.heading}>
+                                <Typography variant='h2'>
+                                    <Button variant='contained' className={classes.logButtonEmail}>
+                                        Log in with email
+                                    </Button>
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </main>
+    )
 }
+

@@ -1,15 +1,23 @@
-import {makeStyles, withStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import React from "react";
 
+
 export const useStyles = makeStyles((theme) => ({
-    root: {
-      minWidth: '100%',
+    labelText: {
+        fontSize: 20,
+        color: '#FFF',
+        '&:active': {
+            color: '#FFF',
+        }
     },
     mainGrid: {
-        width: '100%',
+        minWidth: '100%',
         height: '100vh',
         background: '#2D2D2D',
         color: '#FFF',
+    },
+    margin: {
+        width: '100%'
     },
     container: {
         width: 325,
@@ -21,6 +29,7 @@ export const useStyles = makeStyles((theme) => ({
         fontSize: 48,
         font: 'var(--ttlFnt,var(--font_2))',
         marginBottom: 20,
+        width: '100%',
     },
     headingLogIn: {
         textDecoration: 'none',
@@ -51,9 +60,45 @@ export const useStyles = makeStyles((theme) => ({
     },
     heading: {
         marginTop: -15,
-        minWidth: '100%',
+        width: '100%',
     },
     logButton: {
-        minWidth: '100%',
-    }
+        margin: "auto",
+        width: '100%',
+        border: 'solid 1px #AAAAAA',
+        borderRadius: 0,
+        boxShadow: "none",
+        color: "#FFF",
+        background: 'transparent',
+        transition: 'all 0.0s ease',
+        textTransform: 'none',
+        '&:hover': {
+            background: 'transparent',
+            border: 'solid 1px #FFF',
+        }
+    },
+    closeButton: {
+        position: 'fixed',
+        touchAction: 'manipulation',
+        top: 60,
+        right: 60,
+        background: 'none',
+    },
+    logButtonEmail: {
+        margin: "auto",
+        width: '100%',
+        marginTop: 25,
+        border: 'solid 1px #AAAAAA',
+        borderRadius: 0,
+        boxShadow: "none",
+        color: "#FFF",
+        background: 'transparent',
+        transition: 'all 0.0s ease',
+        textTransform: 'none',
+        '&:hover': {
+            background: 'transparent',
+            border: 'solid 1px #FFF',
+        }
+    },
+
 }))

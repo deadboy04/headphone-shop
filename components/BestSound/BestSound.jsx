@@ -22,8 +22,7 @@ export default function BestSound() {
                                     Music Like You've <br/>
                                     Never Heard Before
                                 </Typography>
-                                <Typography variant="h2"
-                                            className={classNames(classes.textAbout, classes.aboutExperience)}>
+                                <Typography variant="h2" className={classNames(classes.textAbout, classes.aboutExperience)}>
                                     I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click
                                     “Edit Text” or double click me to add your own content
                                 </Typography>
