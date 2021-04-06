@@ -62,7 +62,7 @@ export default function LoginUpWithEmail() {
                             <Grid item className={classes.heading}>
                                 <Typography variant='h2'>
                                     <Button variant='contained' className={classes.logButtonEmail}>
-                                        Log in
+                                        Sign Up
                                     </Button>
                                 </Typography>
                             </Grid>

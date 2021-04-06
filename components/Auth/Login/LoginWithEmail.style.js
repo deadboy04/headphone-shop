@@ -32,6 +32,7 @@ export const CssEmailField = withStyles((theme) => ({
 }))(InputBase);
 
 export const useStyles = makeStyles((theme) => ({
+
     labelText: {
         fontSize: 20,
         color: '#AFAFAF',

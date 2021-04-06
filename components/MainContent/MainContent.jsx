@@ -9,6 +9,7 @@ import Footer from '../Footer';
 import OtherLinks from '../OtherLinks';
 import LoginWithEmail from '../Auth/Login/LoginWithEmail';
 import SignUpWithEmail from '../Auth/SignUp/SignUpWithEmail';
+import Order from '../Order';
 import {Parallax} from 'react-parallax';
 import {useStyles} from './MainContent.style'
 import {Typography, Box, Grid, useMediaQuery, Dialog, Drawer} from '@material-ui/core';
@@ -112,6 +113,7 @@ export default function MainContent() {
                 <Footer className={classes.footer}/>
                 <LoginWithEmail/>
                 <SignUpWithEmail/>
+                <Order/>
             </>
     )
 }

@@ -12,16 +12,28 @@ import classNames from 'classnames';
 import {Close} from '@material-ui/icons';
 import Login from '../Login/Login'
 
+// export default function SignUp({setOpen}) {
+//     const classes = useStyles();
+//     const [open, setOpenLogin] = React.useState(false);
+//
+//     const handleClickOpenLogin = () => {
+//         setOpenLogin(true);
+//     };
+//
+//     const handleClose = () => {
+//         setOpen(false);
+//     };
 export default function SignUp({setOpen}) {
     const classes = useStyles();
-    const [open, setOpenLogin] = React.useState(false);
 
-    const handleClickOpenLogin = () => {
-        setOpenLogin(true);
-    };
+    const [open, setOpenLogin] = React.useState(false);
 
     const handleClose = () => {
         setOpen(false);
+    };
+
+    const handleClickOpenLogin = () => {
+        setOpenLogin(true);
     };
 
 
