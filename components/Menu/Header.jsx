@@ -4,6 +4,7 @@ import {AppBar, Container, Toolbar, Typography, Button, useMediaQuery, Dialog, D
 import {Headset, YouTube, Instagram, Twitter, ShoppingBasket, AccountCircle} from "@material-ui/icons";
 import {Link, animateScroll as scroll} from "react-scroll";
 import SignUp from "../Auth/SignUp/SignUp";
+import Order from '../Order';
 import classNames from 'classnames';
 import SideBasket from "../SideBasket/SideBasket";
 

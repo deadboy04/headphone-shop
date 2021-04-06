@@ -128,6 +128,10 @@ export const useStyles = makeStyles((theme) => ({
         width: 45,
         height: 45,
     },
+    imgBox: {
+        minHeight: 500,
+        minWidth: 500,
+    },
     bottomParagraph: {
         width: 460,
         marginTop: 20,
@@ -157,5 +161,20 @@ export const useStyles = makeStyles((theme) => ({
         width: 1,
         height: 25,
         marginTop: 5,
+    },
+    homeLink: {
+        color: '#FFF',
+    },
+    nameOfModel: {
+        opacity: 0.6,
+    },
+    linkSection: {
+        color: '#FFF',
+        marginTop: 50,
+        marginBottom: 50,
+        fontSize: 14,
+    },
+    secondGrid: {
+        marginTop: 110,
     }
 }))

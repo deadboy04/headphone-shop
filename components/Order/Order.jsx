@@ -6,7 +6,8 @@ import {
     AppBar,
     Tabs,
     AccordionSummary,
-    AccordionDetails
+    AccordionDetails,
+    Link
 } from '@material-ui/core';
 import Header from '../Menu/Header'
 import EmailDistribution from '../EmailDistribution/EmailDistribution'
@@ -19,9 +20,6 @@ import {Add} from '@material-ui/icons';
 
 const image = 'https://static.wixstatic.com/media/82fcd3_96384875d86043c28020b47a59c8c00b~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_96384875d86043c28020b47a59c8c00b~mv2_d_1920_1920_s_2.webp';
 const image2 = 'https://static.wixstatic.com/media/82fcd3_5ee76b86a6cd48e09f554436dae5359e~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_5ee76b86a6cd48e09f554436dae5359e~mv2_d_1920_1920_s_2.webp';
-
-
-
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -68,25 +66,29 @@ export default function Order() {
             <main>
                 <div className={classes.headerSection}>
                     <Header/>
-                    <Grid container className={classes.mainGrid}>
                         <Grid item container className={classes.mainSection}>
+                            <Grid container className={classes.mainGrid}>
                             <Grid item>
+                                <Typography variant='h2' className={classes.linkSection}>
+                                    <Link href='#' underline='none' className={classes.homeLink}>Home</Link> /
+                                    <span className={classes.nameOfModel}>Soundbeam ERD - 3083</span>
+                                </Typography>
                                 <Box>
-                                    <TabPanel value={value} index={0}>
+                                    <TabPanel value={value} index={0} className={classes.imgBox}>
                                         <img alt='headphones'
                                              src="https://static.wixstatic.com/media/82fcd3_96384875d86043c28020b47a59c8c00b~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_96384875d86043c28020b47a59c8c00b~mv2_d_1920_1920_s_2.webp"/>
                                     </TabPanel>
-                                    <TabPanel value={value} index={1}>
+                                    <TabPanel value={value} index={1} className={classes.imgBox}>
                                         <img alt='headphones'
                                              src="https://static.wixstatic.com/media/82fcd3_5ee76b86a6cd48e09f554436dae5359e~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_5ee76b86a6cd48e09f554436dae5359e~mv2_d_1920_1920_s_2.webp"/>
                                     </TabPanel>
-                                    <TabPanel value={value} index={2}>
-                                        <img alt='headphones'
-                                             src="https://static.wixstatic.com/media/82fcd3_977760c1651445fb944de390f577c8e2~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_977760c1651445fb944de390f577c8e2~mv2_d_1920_1920_s_2.webp"/>
-                                    </TabPanel>
-                                    <TabPanel value={value} index={3}>
+                                    <TabPanel value={value} index={2} className={classes.imgBox}>
                                         <img alt='headphones'
                                              src="https://static.wixstatic.com/media/82fcd3_26c0d5a80bf74dccbb37c9e5fc8c9029~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_26c0d5a80bf74dccbb37c9e5fc8c9029~mv2_d_1920_1920_s_2.webp"/>
+                                    </TabPanel>
+                                    <TabPanel value={value} index={3} className={classes.imgBox}>
+                                        <img alt='headphones'
+                                             src="https://static.wixstatic.com/media/82fcd3_977760c1651445fb944de390f577c8e2~mv2_d_1920_1920_s_2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_977760c1651445fb944de390f577c8e2~mv2_d_1920_1920_s_2.webp"/>
                                     </TabPanel>
                                     <AppBar position="static" className={classes.switchBox}>
                                         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
@@ -111,17 +113,20 @@ export default function Order() {
                                 </Box>
 
                             </Grid>
-                            <Grid item>
+                            <Grid item className={classes.secondGrid}>
                                 <Typography variant='h1' className={classes.headphoneTitle}>Soundbeam ERD -
                                     3083</Typography>
                                 <Typography variant='h2' className={classes.underTitle}>SKU: 00001</Typography>
                                 <Typography variant='h3' className={classes.price}>$299.00</Typography>
                                 <Box className={classes.colorSelection}>
-                                    <Typography variant='h2' className={classes.colorSelectorText}>Color</Typography>
+                                    <Typography variant='h2' className={classes.colorSelectorText}>Color: </Typography>
                                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                                        <AntTab className={classes.colorTab}{...a11yProps(0)}/>
-                                        <AntTab className={classes.colorTab}{...a11yProps(1)}/>
-                                        <AntTab className={classes.colorTab}{...a11yProps(2)}/>
+                                        <AntTab className={classes.colorTab}{...a11yProps(0)}
+                                                style={{background: '#000'}}/>
+                                        <AntTab className={classes.colorTab}{...a11yProps(1)}
+                                                style={{background: '#FFF'}}/>
+                                        <AntTab className={classes.colorTab}{...a11yProps(2)}
+                                                style={{background: '#C6A97C'}}/>
                                     </Tabs>
                                 </Box>
                                 <Box className={classes.quantitySpinner}>
