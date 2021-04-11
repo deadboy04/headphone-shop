@@ -6,11 +6,17 @@ import Login from '../Login/Login'
 
 export default function AuthLayout() {
   const classes = useStyles()
-  const [children] = React.useState(SignUp)
 
   return (
     <main>
-      <Grid className={classes.mainGrid}> {children} </Grid>
+      <Grid className={classes.mainGrid}>
+        {' '}
+        {form === 1 ? (
+          <SignUp setForm={setForm} />
+        ) : (
+          <Login setForm={setForm} />
+        )}{' '}
+      </Grid>
     </main>
   )
 }

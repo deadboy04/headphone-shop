@@ -2,18 +2,23 @@ import { Typography, Grid, Button, Link, IconButton } from '@material-ui/core'
 import React from 'react'
 import { useStyles } from './SignUp.style'
 import { Close } from '@material-ui/icons'
-import Login from '../Login/Login'
 
-export default function SignUp() {
+export default function SignUp({ setForm, setOpen }) {
   const classes = useStyles()
 
-  // const handleClickChangeState = () => {
-  //     children(Login)
-  // }
+  const handleClickChangeState = () => {
+    setForm(2)
+  }
+  const handleClickChangeStateToSign = () => {
+    setForm(3)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   return (
     <>
-      <IconButton className={classes.closeButton}>
+      <IconButton className={classes.closeButton} onClick={handleClose}>
         <Close />
       </IconButton>
       <Grid item className={classes.container}>
@@ -31,7 +36,7 @@ export default function SignUp() {
                 color="inherit"
                 underline="none"
                 className={classes.linkStyle}
-                // onClick={handleClickChangeState}
+                onClick={handleClickChangeState}
               >
                 &nbsp;Log in
               </Link>
@@ -60,7 +65,11 @@ export default function SignUp() {
           </Grid>
           <Grid item className={classes.heading}>
             <Typography variant="h2">
-              <Button variant="contained" className={classes.logButtonEmail}>
+              <Button
+                variant="contained"
+                className={classes.logButtonEmail}
+                onClick={handleClickChangeStateToSign}
+              >
                 Sign up with email
               </Button>
             </Typography>

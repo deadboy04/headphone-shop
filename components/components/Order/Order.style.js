@@ -1,6 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import React from 'react'
-import { TextField, Tab, Accordion } from '@material-ui/core'
+import { InputBase, TextField, Tabs, Tab, Accordion } from '@material-ui/core'
 
 export const AccordionCustom = withStyles({
   root: {
@@ -23,10 +23,6 @@ export const AntTab = withStyles((theme) => ({
     textTransform: 'none',
     minWidth: 0,
     minHeight: 0,
-    '& .MuiTab-icon': {
-      minWidth: 0,
-      minHeight: 0,
-    },
   },
 }))((props) => <Tab disableRipple {...props} />)
 
@@ -39,15 +35,15 @@ export const InputSpinner = withStyles((theme) => ({
       borderBottom: 'solid 0px !important',
       color: '#000',
       border: 'none !important',
-      width: 60,
-      height: 10,
+      width: 75,
+      height: 30,
       '&:focus': {
         border: 'none !important',
         color: '#000',
       },
     },
   },
-}))(TextField)
+}))(InputBase)
 
 export const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -79,7 +75,6 @@ export const useStyles = makeStyles((theme) => ({
   colorSelectorText: {
     color: '#ECECEC',
     fontSize: 16,
-    marginBottom: 10,
   },
   buttonOrder: {
     marginTop: 30,
@@ -124,10 +119,12 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: 10,
   },
   switchBox: {
-    width: 170,
+    width: 205,
     background: 'transparent',
-    border: 'none',
-    boxShadow: 'none',
+  },
+  tabElement: {
+    width: 45,
+    height: 45,
   },
   imgBox: {
     minHeight: 500,
@@ -157,7 +154,12 @@ export const useStyles = makeStyles((theme) => ({
     font: 'normal normal normal 16px/1.4em barlow-extralight,barlow,sans-serif',
     fontSize: 14,
   },
-
+  colorTab: {
+    borderRadius: '100%',
+    width: 1,
+    height: 25,
+    marginTop: 5,
+  },
   homeLink: {
     color: '#FFF',
   },
@@ -172,16 +174,5 @@ export const useStyles = makeStyles((theme) => ({
   },
   secondGrid: {
     marginTop: 110,
-  },
-  headIcon: {
-    width: 25,
-    height: 30,
-    objectFit: 'cover',
-  },
-  colorTab: {
-    borderRadius: '100%',
-    width: 0,
-    height: 25,
-    marginTop: 5,
   },
 }))

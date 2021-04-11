@@ -1,119 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useStyles } from './Header.style'
 import {
   AppBar,
   Container,
   Toolbar,
   Typography,
-  Dialog,
-  Grid,
   Button,
-  Divider,
-  List,
-  ListItem,
+  useMediaQuery,
+  Dialog,
   Drawer,
-  IconButton,
 } from '@material-ui/core'
 import {
   Headset,
-  AccountCircle,
-  Instagram,
   YouTube,
+  Instagram,
   Twitter,
   ShoppingBasket,
-  ChevronLeft,
-  ChevronRight,
+  AccountCircle,
 } from '@material-ui/icons'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import SignUp from '../Auth/SignUp/SignUp'
-import Login from '../Auth/Login/Login'
-import SignUpWithEmail from '../Auth/SignUp/SignUpWithEmail'
-import LoginWithEmail from '../Auth/Login/LoginWithEmail'
+import Order from '../Order'
 import classNames from 'classnames'
-import clsx from 'clsx'
+import SideBasket from '../SideBasket/SideBasket'
 
 export default function Header() {
   const classes = useStyles()
-  const [open, setOpen] = useState(false)
-  const [form, setForm] = useState(0)
-  const [openBasket, setOpenBasket] = useState(false)
+  const [open, setOpen] = React.useState(false)
 
   const handleClickOpen = () => {
     setOpen(true)
   }
-  const handleClickClose = () => {
-    setOpen(false)
-  }
-
-  const handleDrawerOpen = () => {
-    openBasket(true)
-  }
-
-  const handleDrawerClose = () => {
-    setOpenBasket(false)
-  }
-
-  // const [state, setState] = React.useState({
-  //     right: false,
-  // })
-  //
-  // const toggleDrawer = (anchor, open) => (event) => {
-  //     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-  //         return;
-  //     }
-  //
-  //     setState({ ...state, [anchor]: open });
-  // };
-
-  const basket = (theme) => (
-    <Drawer
-      className={classes.drawer}
-      variant="persistent"
-      anchor="left"
-      open={open}
-      classes={{
-        paper: classes.listStyles,
-      }}
-    >
-      <List>
-        <ListItem>
-          {' '}
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
-          </IconButton>
-          Cart
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem>Total</ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem>View Cart</ListItem>
-      </List>
-    </Drawer>
-    // <div
-    //         className={clsx(classes.list, {
-    //             [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-    //         })}
-    //         role="presentation"
-    //         onClick={toggleDrawer(anchor, false)}
-    //         onKeyDown={toggleDrawer(anchor, false)}
-    // >
-    //     <List>
-    //         <ListItem>Cart</ListItem>
-    //     </List>
-    //     <Divider />
-    //     <List>
-    //         <ListItem>Total</ListItem>
-    //     </List>
-    //     <Divider />
-    //     <List>
-    //         <ListItem>View Cart</ListItem>
-    //     </List>
-    // </div>
-  )
 
   return (
     <AppBar className={classes.header}>
@@ -194,17 +111,7 @@ export default function Header() {
               Log in
             </Link>
             <Dialog open={open} fullScreen>
-              <Grid className={classes.mainGrid}>
-                {form === 1 ? (
-                  <SignUp setForm={setForm} />
-                ) : form === 2 ? (
-                  <Login setForm={setForm} />
-                ) : form === 3 ? (
-                  <SignUpWithEmail setForm={setForm} />
-                ) : (
-                  <LoginWithEmail setForm={setForm} />
-                )}
-              </Grid>
+              <SignUp />
             </Dialog>
             <Button
               className={classNames(classes.menuButtons, classes.orderButton)}
@@ -242,9 +149,7 @@ export default function Header() {
               variant="body2"
               color="inherit"
               className={classes.menuButtons}
-              onClick={handleDrawerOpen}
             >
-              {basket}
               <ShoppingBasket className={classes.linkIcons} />
             </Link>
           </Typography>

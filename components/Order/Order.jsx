@@ -60,16 +60,16 @@ export default function Order() {
         setValue(newValue);
     };
 
-    const allProducts = Products.map(item => {
-        return (
-                <AntTab
-                        key={item.id}
-                        {...a11yProps(item.id)}
-                        icon={<img src={item.icon} alt="hp" className={classes.headIcon}/>}
-                >
+const allProducts = Products.map(item => {
+    return (
+            <AntTab
+                    key={item.id}
+                    {...a11yProps(item.id)}
+                    icon={<img src={item.icon} alt="hp" className={classes.headIcon}/>}
+            >
 
-                </AntTab>
-        )
+            </AntTab>
+    )
     });
 const productsPhoto = Products.map(item =>
     {
@@ -149,20 +149,17 @@ return (
                             <Typography variant='h2' className={classes.colorSelectorText}> {colorName} </Typography>
                             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example"
                                   indicatorColor='false'>
-                                <AntTab
-                                        className={classes.colorTab}
-                                        {...a11yProps(0)}
-                                        style={{ background: '#000' }}
-                                />
-                                <AntTab
-                                        className={classes.colorTab}
-                                        {...a11yProps(1)}
-                                        style={{ background: '#FFF' }}
-                                />
-                                <AntTab
-                                        className={classes.colorTab}
-                                        {...a11yProps(2)}
-                                        style={{ background: '#C6A97C' }}/>
+                                {
+                                    Products.map((product, index) => {
+                                        return (
+                                                <AntTab
+                                                        className={classes.colorTab}
+                                                        {...a11yProps(index)}
+                                                        style={{ background: `${product.color}` }}
+                                                />
+                                        )
+                                    })
+                                }
                             </Tabs>
                         </Box>
                         <Box className={classes.quantitySpinner}>
