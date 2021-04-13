@@ -30,14 +30,16 @@ import SignUpWithEmail from '../Auth/SignUp/SignUpWithEmail'
 import LoginWithEmail from '../Auth/Login/LoginWithEmail'
 import classNames from 'classnames'
 import Products from '../Product/Products'
-import ProductBasket from "../Product/ProductBasket";
+import ProductBasket from "../Product/ProductBasket"
 import clsx from 'clsx'
+import Cookies from 'universal-cookie'
 
 export default function Header() {
     const [open, setOpen] = useState(false)
     const [form, setForm] = useState(0)
     const [cartItems, setCartItems] = useState([])
     const { product } = Products
+    const cookies = new Cookies()
 
     const classes = useStyles()
 
@@ -45,14 +47,14 @@ export default function Header() {
         const exist = cartItems.find((x) => x.id === product.id)
         if(exist) {
             setCartItems(cartItems.map((x) => x.id === product.id ? {...exist, qty: exist.qty + 1} : x ))
-            console.log( product.paragraph, ' уже корзине')
-            console.log(cartItems)
+            cookies.set('productInCart', cartItems)
+
         } else {
             setCartItems([...cartItems, {...product, qty: 1}])
-            console.log( product.paragraph, ' добавлен в корзину')
-            console.log(cartItems)
+            cookies.set('productInCart', cartItems)
         }
     }
+    // Сделай cookie.set('product', cartItems)
     const onRemove = (product) => {
         const exist = cartItems.find((x) => x.id === product.id)
         if(exist.qty === 1) {
@@ -61,6 +63,8 @@ export default function Header() {
             setCartItems(cartItems.map((x) => x.id === product.id ?  {...exist, qty: exist.qty - 1} : x ))
         }
     }
+
+    console.log(cookies.get('productInCart'))
 
     const handleClickOpen = () => {
         setOpen(true)

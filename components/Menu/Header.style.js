@@ -91,7 +91,7 @@ export const useStyles = makeStyles((theme) => ({
     background: '#2D2D2D',
   },
   firstList: {
-    height: '10%',
+    height: '100px',
     background: '#FFF',
   },
   basketTitle: {
@@ -111,7 +111,7 @@ export const useStyles = makeStyles((theme) => ({
     paddingTop: 35,
   },
   thirdList: {
-    height: '10%',
+    height: 'auto',
     background: '#2D2D2D',
     color: '#FFF',
   },
