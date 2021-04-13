@@ -7,16 +7,10 @@ import BestSound from '../BestSound'
 import EmailDistribution from '../EmailDistribution'
 import Footer from '../Footer'
 import OtherLinks from '../OtherLinks'
-import LoginWithEmail from '../Auth/Login/LoginWithEmail'
-import SignUpWithEmail from '../Auth/SignUp/SignUpWithEmail'
-import Order from '../Order'
+import Cart from '../Cart'
 import { Parallax } from 'react-parallax'
 import { useStyles } from './MainContent.style'
-import {
-  Typography,
-  Box,
-  Grid,
-} from '@material-ui/core'
+import { Typography, Box, Grid } from '@material-ui/core'
 import { Headset, FlashOn, Bluetooth, GraphicEq } from '@material-ui/icons'
 
 const image =
@@ -116,6 +110,7 @@ export default function MainContent() {
       <EmailDistribution className={classes.emailDistribution} />
       <OtherLinks className={classes.otherLinks} />
       <Footer className={classes.footer} />
+      <Cart />
     </>
   )
 }

@@ -14,7 +14,7 @@ import { Close, Facebook, GTranslate } from '@material-ui/icons'
 export default function LoginUpWithEmail({ setForm }) {
   const classes = useStyles()
   const handleClickChangeState = () => {
-    setForm(2)
+    setForm(1)
   }
   const handleClickClose = () => {
     setForm(0)

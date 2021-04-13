@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) => ({
     boxSizing: 'border-box',
     marginTop: -7,
     padding: 0,
-    height: 106,
+    height: 102,
     borderBottom: '1px solid #fff',
   },
   menuLinks: {
@@ -72,6 +72,7 @@ export const useStyles = makeStyles((theme) => ({
     position: 'relative',
     top: 6,
     fontSize: 22,
+    color: '#FFF',
   },
   logInIcon: {
     fontSize: 30,
@@ -85,9 +86,37 @@ export const useStyles = makeStyles((theme) => ({
     color: '#FFF',
   },
   listStyles: {
-    width: 250,
+    width: 380,
+    height: '100%',
+    background: '#2D2D2D',
   },
-  fullList: {
-    width: 'auto',
+  firstList: {
+    height: '10%',
+    background: '#FFF',
+  },
+  basketTitle: {
+    lineHeight: '100px',
+  },
+  cartTitle: {
+    textAlign: 'center',
+    fontSize: 25,
+    marginLeft: '28%',
+  },
+  chevronIcon: {
+    marginTop: -5,
+  },
+  secondList: {
+    height: '80%',
+    background: '#2D2D2D',
+    paddingTop: 35,
+  },
+  thirdList: {
+    height: '10%',
+    background: '#2D2D2D',
+    color: '#FFF',
+  },
+  cartItem: {
+    textAlign: 'center',
+    color: '#FFF',
   },
 }))

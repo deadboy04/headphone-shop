@@ -6,10 +6,10 @@ import { Close } from '@material-ui/icons'
 export default function Login({ setForm }) {
   const classes = useStyles()
   const handleClickChangeState = () => {
-    setForm(1)
+    setForm(0)
   }
   const handleClickChangeStateToLogin = () => {
-    setForm(4)
+    setForm(3)
   }
 
   return (

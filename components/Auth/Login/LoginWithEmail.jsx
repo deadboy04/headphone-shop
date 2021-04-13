@@ -15,7 +15,7 @@ export default function LoginUpWithEmail({ setForm }) {
   const classes = useStyles()
 
   const handleClickChangeState = () => {
-    setForm(1)
+    setForm(0)
   }
 
   return (

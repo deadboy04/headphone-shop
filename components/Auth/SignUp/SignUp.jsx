@@ -7,10 +7,10 @@ export default function SignUp({ setForm, setOpen }) {
   const classes = useStyles()
 
   const handleClickChangeState = () => {
-    setForm(2)
+    setForm(1)
   }
   const handleClickChangeStateToSign = () => {
-    setForm(3)
+    setForm(2)
   }
   const handleClose = () => {
     setOpen(false)
