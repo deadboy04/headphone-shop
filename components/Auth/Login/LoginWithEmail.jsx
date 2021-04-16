@@ -5,11 +5,10 @@ import {
   Link,
   InputLabel,
   FormControl,
-  IconButton,
 } from '@material-ui/core'
 import React from 'react'
 import { useStyles, CssEmailField } from './LoginWithEmail.style'
-import { Close, Facebook, GTranslate } from '@material-ui/icons'
+import { Facebook, GTranslate } from '@material-ui/icons'
 
 export default function LoginUpWithEmail({ setForm }) {
   const classes = useStyles()
@@ -20,9 +19,6 @@ export default function LoginUpWithEmail({ setForm }) {
 
   return (
     <main>
-      <IconButton className={classes.closeButton}>
-        <Close />
-      </IconButton>
       <Grid className={classes.mainGrid}>
         <Grid item className={classes.container}>
           <Grid container direction="column" alignItems="center">
@@ -43,9 +39,6 @@ export default function LoginUpWithEmail({ setForm }) {
                 >
                   &nbsp;Sign Up
                 </Link>
-                {/*<Dialog fullScreen open={open}>*/}
-                {/*    <Login/>*/}
-                {/*</Dialog>*/}
               </Typography>
             </Grid>
             <Grid item className={classes.heading}>
@@ -93,11 +86,9 @@ export default function LoginUpWithEmail({ setForm }) {
             <Grid item>
               <div className={classes.logInSection}>
                 <Link color="inherit" href="#" underline="none">
-                  {' '}
                   <Facebook fontSize="large" className={classes.logInIconFa} />
                 </Link>
                 <Link color="inherit" href="#" underline="none">
-                  {' '}
                   <GTranslate
                     fontSize="large"
                     className={classes.logInIconGoo}

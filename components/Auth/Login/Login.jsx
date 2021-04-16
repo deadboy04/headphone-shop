@@ -14,9 +14,6 @@ export default function Login({ setForm }) {
 
   return (
     <>
-      <IconButton className={classes.closeButton}>
-        <Close />
-      </IconButton>
       <Grid item className={classes.container}>
         <Grid container direction="column" alignItems="center">
           <Grid item>

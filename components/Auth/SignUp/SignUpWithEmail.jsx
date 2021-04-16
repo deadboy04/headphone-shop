@@ -22,9 +22,6 @@ export default function LoginUpWithEmail({ setForm }) {
 
   return (
     <main>
-      <IconButton className={classes.closeButton} onClick={handleClickClose}>
-        <Close />
-      </IconButton>
       <Grid className={classes.mainGrid}>
         <Grid item className={classes.container}>
           <Grid container direction="column" alignItems="center">

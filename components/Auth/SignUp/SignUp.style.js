@@ -75,13 +75,7 @@ export const useStyles = makeStyles((theme) => ({
       border: 'solid 1px #FFF',
     },
   },
-  closeButton: {
-    position: 'fixed',
-    touchAction: 'manipulation',
-    top: 60,
-    right: 60,
-    background: 'none',
-  },
+
   logButtonEmail: {
     margin: 'auto',
     width: '100%',

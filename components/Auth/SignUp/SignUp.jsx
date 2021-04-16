@@ -1,9 +1,8 @@
 import { Typography, Grid, Button, Link, IconButton } from '@material-ui/core'
 import React from 'react'
 import { useStyles } from './SignUp.style'
-import { Close } from '@material-ui/icons'
 
-export default function SignUp({ setForm, setOpen }) {
+export default function SignUp({ setForm }) {
   const classes = useStyles()
 
   const handleClickChangeState = () => {
@@ -12,15 +11,9 @@ export default function SignUp({ setForm, setOpen }) {
   const handleClickChangeStateToSign = () => {
     setForm(2)
   }
-  const handleClose = () => {
-    setOpen(false)
-  }
 
   return (
     <>
-      <IconButton className={classes.closeButton} onClick={handleClose}>
-        <Close />
-      </IconButton>
       <Grid item className={classes.container}>
         <Grid container direction="column" alignItems="center">
           <Grid item>
